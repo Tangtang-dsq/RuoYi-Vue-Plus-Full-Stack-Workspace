@@ -1,0 +1,29 @@
+# Docker 数据目录 - 排除运行时数据，保留配置文件
+
+# MySQL 数据（排除）
+docker-data/mysql/data/
+docker-data/mysql/data-failed-*/
+
+# Redis 数据（排除）
+docker-data/redis/data/
+
+# MinIO 数据（排除）
+docker-data/minio/data/
+docker-data/minio/config/
+
+# 所有日志文件（排除）
+docker-data/*/logs/
+docker-data/nginx/log/
+
+# 备份文件（排除）
+backups/
+
+# 但保留以下配置文件（不排除）：
+# - docker-data/mysql/conf/
+# - docker-data/redis/conf/
+# - docker-data/nginx/conf/
+# - docker-data/nginx/html/
+# - docker-data/nginx/cert/
+
+# 保留目录结构的 .gitkeep 文件
+!**/.gitkeep
